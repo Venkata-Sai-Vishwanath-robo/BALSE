@@ -102,7 +102,7 @@ void lcd_write(void){
 
 void port_write(void){
     LPC_GPIO0->FIOPIN=temp2;
-    if(flag1==0){
+    if(flag1L==0){
         LPC_GPIO0->FIOCLR=RS_CTRL;
     }
     else{
