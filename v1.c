@@ -2,11 +2,11 @@
 
 unsigned int flag1 = 0;
 unsigned int flag2 = 0;
-
-
 #define RS_CTRL 0x08000000
 #define EN_CTRL 0x10000000
 #define DT_CTRL 0x07800000
+
+LPC_GPIO0->FIODIR = 0x00000FF0;
 unsigned long int temp1=0,temp2=0,i,j;
 unsigned char flag1L=0,flag2L=0;
 unsigned char msg[]={"No of People:"};
@@ -16,6 +16,7 @@ void port_write();
 void delay_lcd(unsigned int);
 unsigned long int init_command[]={0x30,0x30,0x30,0x20,0x28,0x0c,0x06,0x01,0x80};
 unsigned int count = 0;
+
 
 
 int main()
