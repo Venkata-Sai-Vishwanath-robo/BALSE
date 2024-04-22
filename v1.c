@@ -1,4 +1,5 @@
 #include<LPC17xx.h>
+#include<stdio.h>
 
 unsigned int flag1 = 0;
 unsigned int flag2 = 0;
