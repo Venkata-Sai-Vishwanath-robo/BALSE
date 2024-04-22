@@ -22,17 +22,17 @@ unsigned int count = 0;
 
 int main()
 {
-LPC_GPIO0->FIODIR = 0x00000FF0;
+SystemInit();
+SystemCoreClockUpdate();
+
     
+LPC_GPIO0->FIODIR = 0x00000FF0;
 LPC_GPIO0->FIODIR=DT_CTRL | RS_CTRL | EN_CTRL;
 flag1L=0;
 for (i=0;i<9;i++){
     temp1=init_command[i];
     lcd_write();
 }
-
-SystemInit();
-SystemCoreClockUpdate();
 
 while(1)
 {
