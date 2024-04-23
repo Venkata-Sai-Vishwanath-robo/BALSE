@@ -45,12 +45,13 @@ void update_LCD_display(void) {
 }
 
 int main() {
+    SystemInit();
+    SystemCoreClockUpdate();
     init_GPIO(); // Initialize GPIO pins
     init_LCD();  // Initialize LCD
     
     while (1) {
-        SystemInit();
-        SystemCoreClockUpdate();
+
 
         if (!(LPC_GPIO2->FIOPIN & (1 << 12)) && flag1 == 0) {
             flag1 = 1;
