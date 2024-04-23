@@ -28,7 +28,7 @@ SystemCoreClockUpdate();
 
     
 LPC_GPIO0->FIODIR = 0x00000FF0;
-LPC_GPIO0->FIODIR=DT_CTRL | RS_CTRL | EN_CTRL;
+LPC_GPIO0->FIODIR |= DT_CTRL | RS_CTRL | EN_CTRL;
 flag1L=0;
 for (i=0;i<9;i++){
     temp1=init_command[i];
